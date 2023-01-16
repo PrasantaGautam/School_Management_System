@@ -104,6 +104,41 @@ def tea_id(request, id):
     return render(request, 'edit.html')
 
 def class_token(request,token):
+    token = token
+    try:
+        if request.method=="POST":
+            if request.POST['nameAdd']:
+                print("condition add")
+                name = str(request.POST['nameAdd'])
+                print(name)
+                address = str(request.POST['address'])
+                print(address)
+                contact = str(request.POST['contact'])
+
+                clsName = token.split("@")
+                clsName=clsName[0]
+                clsName=clsName[4:]
+                tableName='class_'+str(clsName)
+                query1 = f"SELECT COUNT(*) FROM {tableName}  "
+                res = sq.selectone(query1)
+                user_token = token + '$' + str(int(res[0])+1)
+                print(user_token)
+                queryadd = f"INSERT INTO {tableName} (user_token, std_Name, std_Address, std_Contact) VALUES(%s, %s, %s, %s) "
+                values = (user_token, name, address, contact)
+                sq.insert(queryadd, values)
+                print("Done")
+                if request.POST['nameEdit']:
+                        print("condition Edit")
+                        name = str(request.POST['nameEdit'])
+                        print(name)
+                        address = str(request.POST['address'])
+                        print(address)
+                        contact = str(request.POST['contact'])
+                      
+ 
+    except:
+        print("Something wrong on server")
+        pass
     clstkn = str(token)
     query = "SELECT class_token FROM classdetails"
     result = sq.selectall(query)
@@ -157,7 +192,6 @@ def std_id(request,id):
                     clsName=clsName[0]
                     clsName=clsName[4:]
                     clsName='class_'+str(clsName)
-                    print(clsName[0])
                     queryadd = f"UPDATE {clsName} SET std_Name=%s, std_Address=%s, std_Contact=%s WHERE user_token=%s "
                     values = (name, address, contact, user_token)
                     sq.update(queryadd, values)
@@ -169,7 +203,7 @@ def std_id(request,id):
                             'clsName':clsName,
                             'clsTkn':clsToken[0],
                         }
-                    return render(request, f'/class_token/{clsToken[0]}', data)
+                    return render(request, 'class.html', data)
                     
     except:
         print("wrong while update")
