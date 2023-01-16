@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <!-- For fonts -->
+    <script src="https://kit.fontawesome.com/a2101daca5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/popup.css">
+    <!-- <script src="/static/base.js"></script> -->
+    <script type="text/javascript" src="/static/js/base.js"></script>
+
+</head>
+
+<body>
+
+    <div class="top">
+        <h2>
+            <i class="fa-solid fa-house"></i>
+            Schools Management System
+        </h2>
+    </div>
+    <div class="content">
+
+        <div class="content1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcaN5PoQpGMrxMWWU5pGwnQ2a4dSnpG08ScwHa7axfPA&s"
+                alt="Logo" class="im">
+            <div class="nav_item">
+                <i class="fa-solid fa-house"></i>
+                <a href="/dashboard">Dashboard</a>
+            </div>
+            <div class="nav_item">
+                <i class="fa-solid fa-user-group"></i>
+                <a href="/teachers">Teachers</a>
+            </div>
+            <div class="nav_item">
+                <i class="fa-solid fa-diagram-project"></i>
+                Class
+                <!-- <button class="open-buttone" onclick="openclasssec()" ondblclick="closeclasssec()" >Class</button>
+                <div id="classsec">
+                   
+                        {% for res in result %}
+                        <option value="{{ res.0 }}">
+                            
+                            <button>
+                                <a href="/class_token/{{ res.0 }}">{{ res.1 }}</a>
+                            </button>
+                            <br>
+                        </option>
+                        {% endfor %}
+                
+                </div>  -->
+
+            </div>
+            <div class="nav_item">
+                <i class="fa-solid fa-users"></i>
+                <a href="/dashboard">Students</a>
+            </div>
+            <div class="nav_item">
+                <i class="fa-solid fa-user"></i>
+                <a href="/dashboard">Parents</a>
+            </div>
+            <div class="nav_item">
+                <i class="fa-regular fa-credit-card"></i>
+                <a href="/dashboard">Payments</a>
+            </div>
+            <div class="nav_item">
+                <i class="fa-solid fa-bus"></i>
+                <a href="/dashboard">Transport</a>
+            </div>
+            <div class="nav_item">
+                <i class="fa-solid fa-gear"></i>
+                <a href="/dashboard">Settings</a>
+            </div>
+        </div>
+
+        <div class="content2">
+
+
+            {% block analyze %}
+
+            {% endblock %}
+            <!-- </div> -->
+
+            <div class="main">
+                {% block content-title %}
+
+                {% endblock %}
+                {% block add-members %}
+
+                {% endblock %}
+                {% block contents %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <!-- <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+        
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+        </script> -->
+    <div id="screensaver">
+        Hey
+        <img src="/static/images/school.jpg" alt="Hello">
+    </div>
+</body>
+
+</html>

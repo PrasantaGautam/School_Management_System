@@ -32,6 +32,11 @@ def insert(query, values):
 def selectall(query):
     """
     query = "SELECT * FROM table_name"
+
+
+    query = "SELECT col_name FROM table_name"
+
+    query = "SELECT col_name, FROM table_name"
     """
     conn = connections()
     cursor = conn.cursor()
@@ -45,6 +50,14 @@ def selectall(query):
 def selectone(query):
     """
     query = "SELECT * FROM table_name WHERE Primary_key=''"
+
+    or
+
+    query = "SELECT col_name FROM table_name WHERE Primary_key=''"
+
+    query = "SELECT COUNT(*) FROM table_name "
+
+    Returns Data
     """
     conn = connections()
     cursor = conn.cursor()

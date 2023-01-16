@@ -20,5 +20,12 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('demo/', views.fun),
+    path('refresh/', views.refresh),
+    path('teachers/', views.teachers),
+    path('dashboard/', views.dashboard),
+    path('tea_id/<str:id>', views.tea_id, name='tea_id'),
+    path('std_id/<str:id>', views.std_id, name='std_id'),
+    path('class_token/<str:token>', views.class_token, name='class_token'),
+
+
 ]

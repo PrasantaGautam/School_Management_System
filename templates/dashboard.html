@@ -1,0 +1,113 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block analyze %}
+<div class="schoolpic">
+
+<div class="top_bef_main">
+    <div class="analyze">Total Students
+        <h2>{{ student }}</h2>
+    </div>
+    <div class="analyze">Total Teachers
+        <h2>{{ teacher }}</h2>
+    </div>
+    <div class="analyze">Total Staffs
+        <h2>{{ staff }}</h2>
+    </div>
+</div>
+{% endblock %}
+
+{% block content-title %}                
+<div class="title">
+    <h2>Quick Icons</h2>
+</div>
+{% endblock %} 
+
+
+{% block contents %}
+<div class="container">
+    <div class="objects">
+        <i class="fa-solid fa-user-group"></i>
+        <h3>Teachers</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-solid fa-users"></i>
+        <h3>Students</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-solid fa-user"></i>
+        <h3>Parents</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-solid fa-bus"></i>
+        <h3>Transport</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-solid fa-diagram-project"></i>
+        <h3>Class</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-solid fa-bars-staggered"></i>
+        <h3>Subjects</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-solid fa-diagram-project"></i>
+        <h3>Class</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-solid fa-book"></i>
+        <h3>Library</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-regular fa-credit-card"></i>
+        <h3>Payments</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-solid fa-gear"></i>
+        <h3>Attendance</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-solid fa-gear"></i>
+        <h3>Exams</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-solid fa-gear"></i>
+        <h3>Notes</h3>
+    </div>
+    <div class="objects">
+        <i class="fa-solid fa-gear"></i>
+        <h3>Settings</h3>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}
+
+{% block add-members %}
+
+<button class="open-button" onclick="openForm()">Add Members</button>
+
+<div class="form-popup" id="myFormAdd">
+  <form method="POST" class="form-container">
+    {% csrf_token %}
+    <h1>Add</h1>
+
+    <label for="email"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" required>
+
+    <label for="address"><b>Address</b></label>
+    <input type="text" placeholder="Enter Address" name="address" required>
+
+    <label for="contact"><b>Contact</b></label>
+    <input type="text" placeholder="Enter Contact" name="contact" required>
+
+    <button type="submit" class="btn">Add</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+  </form>
+</div>
+
+{% endblock %}

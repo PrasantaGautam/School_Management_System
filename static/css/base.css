@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #90dee0;
+}
+
+
+.top {
+    background-color: rgba(23, 13, 116, 0.768);
+    color: white;
+    /* margin: auto; */
+    /* border: 2px solid yellow; */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid red;
+}
+
+.content1 {
+    background-color: #90dee0;
+    width: 16%;
+    height: 100%;
+    /* border: 2px solid blue; */
+    position: fixed;
+    /* z-index: -1; */
+}
+
+/* NavBar Section */
+
+.im {
+    display: block;
+    margin: auto;
+    padding-bottom: 2vh;
+}
+
+.nav_item {
+    text-align: left;
+    margin: 1%;
+    padding: 2vh 0 0 2vw;
+}
+
+
+
+.nav_item:hover {
+    background-color: #3071a9;
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Content Section */
+
+.content2 {
+    background-color: #ffffff;
+    margin-left: 16%;
+    width: 100%;
+    z-index: 1;
+    /* border: 3px solid teal; */
+}
+
+.top_bef_main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 20vh;
+    /* border: 2px solid blue; */
+    justify-content: space-evenly;
+}
+
+/* Analyze Section of Contentr Section */
+
+.analyze {
+    width: 30%;
+    height: 100%;
+    background-color: rgb(161 134 114);
+    text-align: center;
+}
+
+/* .main{
+    width: 100%;
+} */
+
+/* Table Section of Content Section */
+
+.main table {
+    background-color: cornsilk;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mtitle h2 {
+
+    text-align: center;
+    color: darkolivegreen;
+}
+
+.main table,
+td,
+th {
+    padding: 1%;
+    border: 1px solid;
+}
+
+/* Css for Dashboard */
+.container {
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #efefef;
+}
+
+.objects {
+    border: 2vh solid #f5f5f5;
+    /* background-color: #90dee0; */
+    text-align: center;
+    color: black;
+    font-size: 1.5vw;
+    width: 20%;
+    height: 20vh;
+    margin: auto;
+    padding-top: 2vh;
+}
+
+.objects:hover {
+    background-color: #f5f5f5;
+}
+
+.schoolpice {
+    min-height: 100vh;
+    background-image: url('/static/images/school.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.container .objects i {
+    font-size: 2vw;
+}
+
+#screensaver {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    display: none;
+    z-index: 9999;
+}

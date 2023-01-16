@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ clsName }}
+{% endblock %}
+
+{% block content-title %}
+<div class="mtitle">
+    <h2>Class</h2>
+</div>
+{% endblock %}
+
+{% block add-members %}
+
+<button class="open-button" onclick="openForm()">Add Members</button>
+
+<div class="form-popup" id="myFormAdd">
+  <form method="POST" class="form-container">
+    {% csrf_token %}
+    <h1>Add</h1>
+    <label for="email"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="nameAdd" required>
+    <label for="address"><b>Address</b></label>
+    <input type="text" placeholder="Enter Address" name="address" required>
+    <label for="contact"><b>Contact</b></label>
+    <input type="text" placeholder="Enter Contact" name="contact" required>
+    <button type="submit" class="btn">Add</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+  </form>
+</div>
+
+{% endblock %}
+
+{% block contents %}
+<table>
+
+    <tr>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Contact</th>
+        <th>Contact</th>
+        <th>Contact</th>
+
+    </tr>
+    {% for res in result %}
+ 
+    <tr>
+        <td> {{ res.0 }} </td>
+        <td> {{ res.1 }} </td>
+        <td> {{ res.1 }} </td>
+        <td> {{ res.1 }} </td>
+        <td>
+            <div name=" {{ clsTkn }} ">
+
+                <button class="open-buttonEdit" id="{{ res.2 }}"  onclick="openstdFormEdit(this.id)">Edit</button>
+                <!-- <div class="form-popup"  id="myFormEdit">
+                  <form method="POST" class="form-container">
+                      {% csrf_token %}
+                      <h1>Edit</h1>
+                      <label for="email"><b>Name</b></label>
+                      <input type="text" placeholder="Enter Name" name="nameEdit" required>
+                      <label for="address"><b>Address</b></label>
+                      <input type="text" placeholder="Enter Address" name="address" required>
+                      <label for="contact"><b>Contact</b></label>
+                      <input type="text" placeholder="Enter Contact" name="contact" required>
+                      <button type="button" class="btn cancel" id="{{ clsTkn }}" onclick="closestdFormEdit(this.id)">Cancel</button>
+                  </form>
+              </div> -->
+            
+        </td>
+        
+        {% endfor %}
+</table>
+{% endblock %}
