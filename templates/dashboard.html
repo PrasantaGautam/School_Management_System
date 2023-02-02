@@ -87,27 +87,3 @@ Dashboard
 
 {% endblock %}
 
-{% block add-members %}
-
-<button class="open-button" onclick="openForm()">Add Members</button>
-
-<div class="form-popup" id="myFormAdd">
-  <form method="POST" class="form-container">
-    {% csrf_token %}
-    <h1>Add</h1>
-
-    <label for="email"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name" required>
-
-    <label for="address"><b>Address</b></label>
-    <input type="text" placeholder="Enter Address" name="address" required>
-
-    <label for="contact"><b>Contact</b></label>
-    <input type="text" placeholder="Enter Contact" name="contact" required>
-
-    <button type="submit" class="btn">Add</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
-  </form>
-</div>
-
-{% endblock %}
